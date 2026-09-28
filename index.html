@@ -588,9 +588,7 @@ function sessionItem(x, showStudent, readOnly){
     '<div class="side"><span>' + esc(fmtDate(x.date)) + '</span>' + (readOnly ? '' : '<button type="button" class="btn sm" data-act="del-session" data-id="' + esc(x.id) + '" aria-label="حذف هذا التسميع">حذف</button>') + '</div></li>';
 }
 function canSeeStudent(s){
-  if (!myTeacher || myTeacher.isAdmin) return true;
-  if (!s.ownerPhone) return true;
-  return s.ownerPhone === myPhone;
+  return true;
 }
 function visibleStudents(){ return state.students.filter(canSeeStudent); }
 function viewHome(){
